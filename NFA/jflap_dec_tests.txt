@@ -1,0 +1,25 @@
+10 accept
+0 accept
+123456789 accept
+100_000_000 accept
+1_2_3_4_5 accept
+0_0 accept
+0_0_0 accept
+9_9 accept
+00 accept
+000 accept
+
+_123 reject
+123_ reject
+12__34 reject
+01 reject
+01234 reject
+1a234 reject
+1.5 reject
+-123 reject
++456 reject
+123,456 reject
+0x123 reject
+0b101 reject
+0o777 reject
+ reject
