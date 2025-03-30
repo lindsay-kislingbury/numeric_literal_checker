@@ -1,23 +1,25 @@
-# Simple NFA Tester
 # Usage:
 #   FILE MODE
-#   python nfa.py [type] [input_file] [output_file]
+#   python main.py [type] [input_file] [output_file]
+#   or
+#   python main.py [type] [input_file]  (uses default out.txt)
 #   or
 #   MANUAL MODE
-#   python nfa.py [type]
+#   python main.py [type]
 #
 #   if you use an input file, it'll run in file mode
-#   if you use an input file but no output file, it'll overwrite out.txt (totally fine!)
+#   if you use an input file but no output file, it'll use out.txt
 #   if you don't use an input file, it'll run in manual mode (enter inputs manually)
 #
 # Where:
 #   [type] - NFA type: 1=hex, 2=dec, 3=oct
 #   [input_file] - JFLAP format test file ex: 23_4 accept
-#   [output_file] - Output results file ( will be created if it doesn't exist )
+#   [output_file] - Output results file (will be created if it doesn't exist)
 #
 # Examples:
-#   python octal_nfa.py 1 octal_tests.txt octal_output.txt  // octal nfa file mode test
-#   python decimal_nfa.py 2 // decimal nfa manual mode test
+#   python main.py 3 octal_tests.txt octal_output.txt  // octal nfa file mode test
+#   python main.py 2 decimal_tests.txt  // decimal nfa file mode, writes to out.txt
+#   python main.py 1  // hex nfa manual mode test
 
 import sys
 
@@ -90,7 +92,9 @@ if __name__ == "__main__":
     else:
         try:
             while True:
-                user_input = input("> ")
+                user_input = input("Enter test string (or 'exit' to quit): ").strip()
+                if user_input.lower() == "exit":
+                    break
                 result = nfa.accepts(user_input)
                 print(f"{'Accept' if result else 'Reject'}")
         except KeyboardInterrupt:
