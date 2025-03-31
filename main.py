@@ -47,8 +47,8 @@ def get_nfa(nfa_type):
         return create_hex_nfa()
     elif nfa_type == 2 and create_dec_nfa:
         return create_dec_nfa()
-    elif nfa_type == 3 and create_oct_nfa:
-        return create_oct_nfa()
+    elif nfa_type == 3 and create_octal_nfa:
+        return create_octal_nfa()
     return None
 
 
