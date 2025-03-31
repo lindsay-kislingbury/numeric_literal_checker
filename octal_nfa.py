@@ -38,7 +38,7 @@ def create_octal_nfa():
         transitions[("octal_q4", digit)] = {"octal_q3"}
 
     # Define accepting states
-    accepting_states = set("octal_q3")
+    accepting_states = {"octal_q3"}
 
     # Create and return the NFA
     return NFA(states, alphabet, transitions, "octal_q0", accepting_states)
