@@ -5,7 +5,7 @@ def create_hex_nfa():
     """
     Create an NFA that recognizes Python hexadecimal integer literals
     """
-    # Define states - only need 5 states based on the diagram
+    # Define states
     states = {"hex_q0", "hex_q1", "hex_q2", "hex_q3", "hex_q4"}
 
     # Define alphabet
@@ -27,7 +27,7 @@ def create_hex_nfa():
     for digit in "0123456789abcdefABCDEF":
         transitions[("hex_q3", digit)] = {"hex_q3"}
 
-    # Underscore and epsilon from hex_q3 to hex_hex_q4
+    # Underscore and epsilon from hex_q3 to hex_q4
     transitions[("hex_q3", "_")] = {"hex_q4"}
     transitions[("hex_q3", None)] = {"hex_q4"}  # epsilon transition
 
