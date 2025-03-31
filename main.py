@@ -45,8 +45,8 @@ except ImportError:
 def get_nfa(nfa_type):
     if nfa_type == 1 and create_hex_nfa:
         return create_hex_nfa()
-    elif nfa_type == 2 and create_dec_nfa:
-        return create_dec_nfa()
+    elif nfa_type == 2 and create_decimal_nfa:
+        return create_decimal_nfa()
     elif nfa_type == 3 and create_octal_nfa:
         return create_octal_nfa()
     return None
