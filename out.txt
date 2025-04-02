@@ -1,65 +1,688 @@
-Input: 0x0, Expected: Accept, Got: Accept, Status: Pass
-Input: 0X0, Expected: Accept, Got: Accept, Status: Pass
-Input: 0xff, Expected: Accept, Got: Accept, Status: Pass
-Input: 0XFF, Expected: Accept, Got: Accept, Status: Pass
-Input: 0xabc, Expected: Accept, Got: Accept, Status: Pass
-Input: 0xABC, Expected: Accept, Got: Accept, Status: Pass
-Input: 0xaBcD, Expected: Accept, Got: Accept, Status: Pass
-Input: 0x123, Expected: Accept, Got: Accept, Status: Pass
-Input: 0x1_2_3, Expected: Accept, Got: Accept, Status: Pass
-Input: 0xa_b_c, Expected: Accept, Got: Accept, Status: Pass
-Input: 0xF_F_F, Expected: Accept, Got: Accept, Status: Pass
-Input: 0x1a2b3c, Expected: Accept, Got: Accept, Status: Pass
-Input: 0x1A2B3C, Expected: Accept, Got: Accept, Status: Pass
-Input: 0x1_a2_b3_c, Expected: Accept, Got: Accept, Status: Pass
-Input: 0x0_0, Expected: Accept, Got: Accept, Status: Pass
-Input: 0x000, Expected: Accept, Got: Accept, Status: Pass
-Input: 0x0_0_0, Expected: Accept, Got: Accept, Status: Pass
-Input: 0xdead_beef, Expected: Accept, Got: Accept, Status: Pass
-Input: 0x0123456789abcdef, Expected: Accept, Got: Accept, Status: Pass
-Input: 0x0123456789ABCDEF, Expected: Accept, Got: Accept, Status: Pass
-Input: 0x0_1_2_3_4_5_6_7_8_9_a_b_c_d_e_f, Expected: Accept, Got: Accept, Status: Pass
-Input: 0xf_e_d_c_b_a_9_8_7_6_5_4_3_2_1_0, Expected: Accept, Got: Accept, Status: Pass
-Input: 0x_f, Expected: Reject, Got: Reject, Status: Pass
-Input: 0xf_, Expected: Reject, Got: Reject, Status: Pass
-Input: 0x_, Expected: Reject, Got: Reject, Status: Pass
-Input: 0x__, Expected: Reject, Got: Reject, Status: Pass
-Input: 0x__f, Expected: Reject, Got: Reject, Status: Pass
-Input: 0xf__0, Expected: Reject, Got: Reject, Status: Pass
-Input: 0x_f_0, Expected: Reject, Got: Reject, Status: Pass
-Input: 0xf_0_, Expected: Reject, Got: Reject, Status: Pass
-Input: 0x, Expected: Reject, Got: Reject, Status: Pass
-Input: 0xg, Expected: Reject, Got: Reject, Status: Pass
-Input: 0xG, Expected: Reject, Got: Reject, Status: Pass
-Input: 0xz, Expected: Reject, Got: Reject, Status: Pass
-Input: 0xZ, Expected: Reject, Got: Reject, Status: Pass
-Input: 0xg_f, Expected: Reject, Got: Reject, Status: Pass
-Input: 0xf_g, Expected: Reject, Got: Reject, Status: Pass
-Input: 0xfgh, Expected: Reject, Got: Reject, Status: Pass
-Input: 0x1g3, Expected: Reject, Got: Reject, Status: Pass
-Input: 00xf, Expected: Reject, Got: Reject, Status: Pass
-Input: 000xf, Expected: Reject, Got: Reject, Status: Pass
-Input: xf, Expected: Reject, Got: Reject, Status: Pass
-Input: Xf, Expected: Reject, Got: Reject, Status: Pass
-Input: 0, Expected: Reject, Got: Reject, Status: Pass
-Input: f, Expected: Reject, Got: Reject, Status: Pass
-Input: 0f, Expected: Reject, Got: Reject, Status: Pass
-Input: 00f, Expected: Reject, Got: Reject, Status: Pass
-Input: 0f0f, Expected: Reject, Got: Reject, Status: Pass
-Input: 0Xf0, Expected: Accept, Got: Accept, Status: Pass
-Input: 0xf0, Expected: Accept, Got: Accept, Status: Pass
-Input: 0xf.0, Expected: Reject, Got: Reject, Status: Pass
-Input: 0xf,0, Expected: Reject, Got: Reject, Status: Pass
-Input: 0x+f, Expected: Reject, Got: Reject, Status: Pass
-Input: 0x-f, Expected: Reject, Got: Reject, Status: Pass
-Input: +0xf, Expected: Reject, Got: Reject, Status: Pass
-Input: -0xf, Expected: Reject, Got: Reject, Status: Pass
-Input: 0xf+0, Expected: Reject, Got: Reject, Status: Pass
-Input: 0xf-0, Expected: Reject, Got: Reject, Status: Pass
-Input: 0o7, Expected: Reject, Got: Reject, Status: Pass
-Input: 0b1, Expected: Reject, Got: Reject, Status: Pass
-Input: 0O7, Expected: Reject, Got: Reject, Status: Pass
-Input: 0B1, Expected: Reject, Got: Reject, Status: Pass
-Input: 0ox7, Expected: Reject, Got: Reject, Status: Pass
-Input: 0bx1, Expected: Reject, Got: Reject, Status: Pass
-Input: 0x, Expected: Reject, Got: Reject, Status: Pass
+TEST SUMMARY
+============
+Total tests: 136
+Tests passed: 136
+
+DETAILED RESULTS
+================
+
+Test #1: '0'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #2: '10'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #3: '123456789'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #4: '100_000_000'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #5: '1_2_3_4_5'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #6: '0_0'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #7: '0_0_0'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #8: '9_9'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #9: '00'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #10: '000'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #11: '9876543210'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #12: '123_456_789_0'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #13: '_123'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #14: '123_'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #15: '12__34'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #16: '01'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #17: '01234'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #18: '1a234'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #19: '1.5'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #20: '-123'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #21: '+456'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #22: '123,456'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #23: '000123'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #24: '0123'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #25: '0b101'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #26: '0B101'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #27: ''
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #28: '0o0'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #29: '0O0'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #30: '0o7'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #31: '0O7'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #32: '0o123'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #33: '0O456'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #34: '0o777'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #35: '0o1_2_3'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #36: '0o7_7_7'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #37: '0o01234567'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #38: '0o0_1_2_3_4_5_6_7'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #39: '0o0000'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #40: '0o0_0_0_0'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #41: '0o76543210'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #42: '0o_'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #43: '0o__'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #44: '0o__7'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #45: '0o7__'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #46: '0o_7_0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #47: '0o7_0_'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #48: '0o'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #49: '0o8'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #50: '0O9'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #51: '0o89'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #52: '0o78'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #53: '0o1_8'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #54: '0o7g'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #55: '0o7.0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #56: '0o7,0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #57: '0o+7'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #58: '0o-7'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #59: '+0o7'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #60: '-0o7'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #61: '0o7+0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #62: '0o7-0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #63: '0o8_7'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #64: '0o9_8'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #65: '0x0'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #66: '0X0'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #67: '0xff'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #68: '0XFF'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #69: '0xabc'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #70: '0xABC'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #71: '0xaBcD'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #72: '0x123'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #73: '0x1_2_3'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #74: '0xa_b_c'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #75: '0xF_F_F'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #76: '0x1a2b3c'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #77: '0x1A2B3C'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #78: '0x1_a2_b3_c'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #79: '0xdead_beef'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #80: '0x0123456789abcdef'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #81: '0x0123456789ABCDEF'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #82: '0x0_1_2_3_4_5_6_7_8_9_a_b_c_d_e_f'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #83: '0xf_e_d_c_b_a_9_8_7_6_5_4_3_2_1_0'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #84: '0Xf0'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #85: '0xf0'
+  Expected: Accept
+  Got: Accept
+  Status: PASS
+
+Test #86: '0x_f'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #87: '0xf_'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #88: '0x_'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #89: '0x__'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #90: '0x__f'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #91: '0xf__0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #92: '0x_f_0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #93: '0xf_0_'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #94: '0x'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #95: '0xg'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #96: '0xG'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #97: '0xz'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #98: '0xZ'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #99: '0xg_f'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #100: '0xf_g'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #101: '0xfgh'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #102: '0x1g3'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #103: '00xf'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #104: '000xf'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #105: 'xf'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #106: 'Xf'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #107: '0f'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #108: '00f'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #109: '0f0f'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #110: '0xf.0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #111: '0xf,0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #112: '0x+f'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #113: '0x-f'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #114: '+0xf'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #115: '-0xf'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #116: '0xf+0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #117: '0xf-0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #118: '0o0x0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #119: '0x0o0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #120: '0ox0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #121: '0xo0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #122: '0x 0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #123: '0o 0'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #124: '0ox7'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #125: '0xo7'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #126: '0oo7'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #127: '0xx7'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #128: '0o7x'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #129: '0x7o'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #130: '0ox7'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #131: '0xo1'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #132: '0oo7'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #133: '0xx1'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #134: '0o7x'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #135: '0x7o'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
+Test #136: '# This is a test starting with #'
+  Expected: Reject
+  Got: Reject
+  Status: PASS
+
