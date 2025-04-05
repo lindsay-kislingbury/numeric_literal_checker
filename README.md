@@ -10,7 +10,7 @@ This project implements a Non-deterministic Finite Automaton (NFA), and equivale
 |---------------------------|--------------------------|--------------------------------------|
 | Roshan Karimi             | `Roshaaw`                | Octal literal code implementation    |
 | Lindsay Kislingbury       | `lindsay-kislingbury`    | Hexadecimal literal implementation   |
-| Kaila Manaligod Manangan  | `kaila_username_here`    | Decimal literal code implementation  |
+| Kaila Manaligod Manangan  | `kailamanangan16`        | Decimal literal code implementation  |
 
 > All group members collaborated via voice calls to design **each individual NFA** and the **combined NFA**. We worked together on transitions, testing, and JFLAP design. Each member implemented code for one specific number type, but the logic and NFA design were collaborative.
 
@@ -51,5 +51,7 @@ Branches were merged to main before submission. All members made commits through
 
 📎 Notes
 No built-in parsing, regex, or third-party libraries were used.
+
 All transitions and logic mirror our NFA designs.
+
 Extra credit for floating point literals was not completed.
