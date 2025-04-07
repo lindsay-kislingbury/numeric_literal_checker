@@ -23,7 +23,6 @@ This project implements a Non-deterministic Finite Automaton (NFA), and equivale
 
 ## ⚙️ How to Run
 
-```bash
 python main.py <mode> <input_file> [output_file]
 
 ---
@@ -39,17 +38,17 @@ The <input_file> is required, and if [output_file] is not provided, the program 
 
 ---
 
-🏷️ Git Tags
+## 🏷️ Git Tags
 Tag Name	Description
-v1.0	Initial version with decimal only
-v1.1	Added octal and hex support
-final	Final merged version of all features
+- v1.0	Initial version with decimal only
+- v1.1	Added octal and hex support
+- final	Final merged version of all features
 
 Branches were merged to main before submission. All members made commits throughout development.
 
 ---
 
-📎 Notes
+## 📎 Notes
 No built-in parsing, regex, or third-party libraries were used.
 
 All transitions and logic mirror our NFA designs.
