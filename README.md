@@ -28,7 +28,7 @@ python main.py <mode> <input_file> [output_file]
 
 ---
 
-Modes:
+## Modes:
 1 – Hexadecimal mode
 
 2 – Decimal mode
