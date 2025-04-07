@@ -1,7 +1,7 @@
 TEST SUMMARY
 ============
-Total tests: 136
-Tests passed: 136
+Total tests: 135
+Tests passed: 135
 
 DETAILED RESULTS
 ================
@@ -677,11 +677,6 @@ Test #134: '0o7x'
   Status: PASS
 
 Test #135: '0x7o'
-  Expected: Reject
-  Got: Reject
-  Status: PASS
-
-Test #136: '# This is a test starting with #'
   Expected: Reject
   Got: Reject
   Status: PASS

@@ -1,56 +1,98 @@
-# 🔢 Python Numerical Literals NFA Recognition
+# 🔢 Python Numeric Literal Checker
 
-This project implements a Non-deterministic Finite Automaton (NFA), and equivalent code, to recognize Python numerical literals based on the Python Language Specification. It supports decimal, octal, and hexadecimal integer literals. Extra credit for floating point literals was **not** implemented.
+This project implements a Non-deterministic Finite Automaton (NFA) to recognize Python integer literals according to the official Python Language Specification. Our implementation demonstrates how formal language theory and automata can be applied to practical programming language parsing.
+
+## Project Overview
+
+This application:
+- Uses NFAs to validate Python numeric literals without relying on regex or built-in parsing
+- Processes decimal, octal, and hexadecimal integer formats
+- Combines individual NFAs into a single unified automaton
+- Includes comprehensive test cases covering valid and invalid inputs
+- Provides visual representations of all state machines
+
+The project showcases both theoretical concepts from automata theory and practical implementation in Python, demonstrating how formal language recognition works in programming language design.
+
+## Integer Literals
+
+According to the [Python documentation](https://docs.python.org/3/reference/lexical_analysis.html#numeric-literals), integer literals follow these lexical definitions:
+
+```
+integer      ::= decinteger | bininteger | octinteger | hexinteger
+decinteger   ::= nonzerodigit (["_"] digit)* | "0"+ (["_"] "0")*
+bininteger   ::= "0" ("b" | "B") (["_"] bindigit)+
+octinteger   ::= "0" ("o" | "O") (["_"] octdigit)+
+hexinteger   ::= "0" ("x" | "X") (["_"] hexdigit)+
+nonzerodigit ::= "1"..."9"
+digit        ::= "0"..."9"
+bindigit     ::= "0" | "1"
+octdigit     ::= "0"..."7"
+hexdigit     ::= digit | "a"..."f" | "A"..."F"
+``` 
+
+Our NFA implementation supports decimal integers (e.g., `123`, `0`, `1_000`), octal integers (e.g., `0o777`, `0O123`), and hexadecimal integers (e.g., `0xff`, `0XAB`), with proper handling of underscore separators according to the specification.
 
 ---
 
-## 👨‍👩‍👧 Group Members
 
-| Full Name                  | GitHub Username         | Tasks Completed                      |
-|---------------------------|--------------------------|--------------------------------------|
-| Roshan Karimi             | `Roshaaw`                | Octal literal code implementation    |
-| Lindsay Kislingbury       | `lindsay-kislingbury`    | Hexadecimal literal implementation   |
-| Kaila Manaligod Manangan  | `kailamanangan16`        | Decimal literal code implementation  |
+## 👩‍💻 Team: Three Musketeers 
+
+| Name | GitHub | Tasks |
+|------|--------|-------|
+| Roshan Karimi | [Roshaaw](https://github.com/Roshaaw) | Octal literal code implementation, Octal NFA diagram, README documentation |
+| Lindsay Kislingbury | [lindsay-kislingbury](https://github.com/lindsay-kislingbury) | Hexadecimal literal implementation, Hexadecimal NFA diagram, Combined NFA integration, Test framework development |
+| Kaila Manaligod Manangan | [kailamanangan16](https://github.com/kailamanangan16) | Decimal literal code implementation, Decimal NFA diagram, Test case validation |
 
 > All group members collaborated via voice calls to design **each individual NFA** and the **combined NFA**. We worked together on transitions, testing, and JFLAP design. Each member implemented code for one specific number type, but the logic and NFA design were collaborative.
 
----
-
-## 📁 Project Structure
-
-
----
 
 ## ⚙️ How to Run
 
-python main.py <mode> <input_file> [output_file]
+`python main.py [input_file] [output_file]`
+
+`[input_file]` is required and must be located in project root.   
+`[output_file]` is not required. If not provided, the program will overwrite out.txt by default.
+
+**Input File Format:**  
+Each line should contain a test case followed by "accept" or "reject", such as:
+
+```
+123 accept
+0xff accept
+0o777 accept
+01 reject
+``` 
+
+- The empty string can be tested with just "accept" or "reject" on a line
+- Empty lines are skipped
+- Lines starting with # will be processed as test cases, not comments
+
+**Output Format:**  
+The program produces a formatted report showing:
+- A summary of tests run, passed, and failed
+- Detailed results for each test case
+
 
 ---
 
-## Modes:
-1 – Hexadecimal mode
+## 📁 NFA Diagrams
 
-2 – Decimal mode
+The `nfa` folder contains visual representations of our automata designs:
 
-3 – Octal mode
+- **Decimal NFA**: State diagram showing the automaton that recognizes Python decimal literals
+- **Octal NFA**: State diagram showing the automaton that recognizes Python octal literals
+- **Hexadecimal NFA**: State diagram showing the automaton that recognizes Python hexadecimal literals
+- **Combined NFA**: The unified automaton that integrates all three NFAs to recognize any valid Python integer literal
 
-The <input_file> is required, and if [output_file] is not provided, the program will overwrite out.txt by default.
+Each diagram is available in both JFLAP file format (`.jff`) for further exploration and as image files (`.jpg`) for quick reference. These diagrams were essential to our implementation process and directly correspond to the transition functions in our code.
 
----
+--- 
 
-## 🏷️ Git Tags
-Tag Name	Description
-- v1.0	Initial version with decimal only
-- v1.1	Added octal and hex support
-- final	Final merged version of all features
-
-Branches were merged to main before submission. All members made commits throughout development.
-
----
 
 ## 📎 Notes
-No built-in parsing, regex, or third-party libraries were used.
+- Implementation follows strict automata theory principles without relying on any built-in parsing, regex, or third-party libraries
+- All state transitions in code directly correspond to our NFA diagrams
+- The project uses a modular design where each numeric type is handled by a dedicated NFA module
 
-All transitions and logic mirror our NFA designs.
 
-Extra credit for floating point literals was not completed.
+
