@@ -46,10 +46,6 @@ exponent      ::= ("e" | "E") ["+" | "-"] digitpart
 
 Note that the integer and exponent parts are always interpreted using radix 10. For example, 077e010 is legal, and denotes the same number as 77e10. The allowed range of floating-point literals is implementation-dependent. As in integer literals, underscores are supported for digit grouping.
 
-Some examples of floating-point literals:
-
-3.14    10.    .001    1e100    3.14e-10    0e0    3.14_15_93
-
 
 ---
 
