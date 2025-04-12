@@ -36,13 +36,14 @@ Our NFA implementation supports decimal integers (e.g., `123`, `0`, `1_000`), oc
 ## Floating-point literals
 
 According to the [Python documentation](https://docs.python.org/3/reference/lexical_analysis.html#numeric-literals), Floating-point literals are described by the following lexical definitions:
-
+```
 floatnumber   ::= pointfloat | exponentfloat
 pointfloat    ::= [digitpart] fraction | digitpart "."
 exponentfloat ::= (digitpart | pointfloat) exponent
 digitpart     ::= digit (["_"] digit)*
 fraction      ::= "." digitpart
 exponent      ::= ("e" | "E") ["+" | "-"] digitpart
+```
 
 Note that the integer and exponent parts are always interpreted using radix 10. For example, 077e010 is legal, and denotes the same number as 77e10. The allowed range of floating-point literals is implementation-dependent. As in integer literals, underscores are supported for digit grouping.
 
@@ -56,7 +57,7 @@ Note that the integer and exponent parts are always interpreted using radix 10. 
 |------|--------|-------|
 | Roshan Karimi | [Roshaaw](https://github.com/Roshaaw) | Octal literal code implementation, Octal NFA diagram, Floating Point NFA diagram README documentation |
 | Lindsay Kislingbury | [lindsay-kislingbury](https://github.com/lindsay-kislingbury) | Hexadecimal literal implementation, Floating Point NFA diagram, Hexadecimal NFA diagram, Combined NFA integration, Test framework development |
-| Kaila Manaligod Manangan | [kailamanangan16](https://github.com/kailamanangan16) | Decimal literal code implementation, Decimal NFA diagram, Floating Point implementation Test case validation |
+| Kaila Manaligod Manangan | [kailamanangan16](https://github.com/kailamanangan16) | Decimal literal code implementation, Decimal NFA diagram, Floating Point implementation, Test case validation |
 
 > All group members collaborated via voice calls to design **each individual NFA** and the **combined NFA**. We worked together on transitions, testing, and JFLAP design. Each member implemented code for one specific number type, but the logic and NFA design were collaborative.
 
