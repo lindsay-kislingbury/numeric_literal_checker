@@ -58,15 +58,9 @@ Some examples of floating-point literals:
 
 | Name | GitHub | Tasks |
 |------|--------|-------|
-<<<<<<< HEAD
 | Roshan Karimi | [Roshaaw](https://github.com/Roshaaw) | Octal literal code implementation, Octal NFA diagram, Floating Point NFA diagram README documentation |
 | Lindsay Kislingbury | [lindsay-kislingbury](https://github.com/lindsay-kislingbury) | Hexadecimal literal implementation, Floating Point NFA diagram, Hexadecimal NFA diagram, Combined NFA integration, Test framework development |
 | Kaila Manaligod Manangan | [kailamanangan16](https://github.com/kailamanangan16) | Decimal literal code implementation, Decimal NFA diagram, Floating Point implementation Test case validation |
-=======
-| Roshan Karimi | [Roshaaw](https://github.com/Roshaaw) | Octal literal code implementation, Octal NFA diagram, Float NFA diagram, README documentation |
-| Lindsay Kislingbury | [lindsay-kislingbury](https://github.com/lindsay-kislingbury) | Hexadecimal literal implementation, Hexadecimal NFA diagram, FLOAT NFA diagram, Combined NFA integration, Test framework development |
-| Kaila Manaligod Manangan | [kailamanangan16](https://github.com/kailamanangan16) | Decimal literal code implementation, Decimal NFA diagram, Test case validation |
->>>>>>> e602e72b6065ade2bc4c0aad4c93fa52ccc99d6b
 
 > All group members collaborated via voice calls to design **each individual NFA** and the **combined NFA**. We worked together on transitions, testing, and JFLAP design. Each member implemented code for one specific number type, but the logic and NFA design were collaborative.
 
