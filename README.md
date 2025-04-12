@@ -5,8 +5,8 @@ This project implements a Non-deterministic Finite Automaton (NFA) to recognize 
 ## Project Overview
 
 This application:
-- Uses NFAs to validate Python numeric literals without relying on regex or built-in parsing
-- Processes decimal, octal, and hexadecimal integer formats
+- Uses NFAs to validate Python numeric literals without relying on regex or built-in parsing 
+- Processes decimal, octal, hexadecimal, and floating point formats
 - Combines individual NFAs into a single unified automaton
 - Includes comprehensive test cases covering valid and invalid inputs
 - Provides visual representations of all state machines
@@ -30,7 +30,7 @@ octdigit     ::= "0"..."7"
 hexdigit     ::= digit | "a"..."f" | "A"..."F"
 ``` 
 
-Our NFA implementation supports decimal integers (e.g., `123`, `0`, `1_000`), octal integers (e.g., `0o777`, `0O123`), and hexadecimal integers (e.g., `0xff`, `0XAB`), with proper handling of underscore separators according to the specification.
+Our NFA implementation supports decimal integers (e.g., `123`, `0`, `1_000`), octal integers (e.g., `0o777`, `0O123`), hexadecimal integers (e.g., `0xff`, `0XAB`), and floating point literals (e.g., `3.14`, `1e100`, `3.14e-10`)  with proper handling of underscore separators according to the specification.
 
 ---
 
@@ -39,9 +39,9 @@ Our NFA implementation supports decimal integers (e.g., `123`, `0`, `1_000`), oc
 
 | Name | GitHub | Tasks |
 |------|--------|-------|
-| Roshan Karimi | [Roshaaw](https://github.com/Roshaaw) | Octal literal code implementation, Octal NFA diagram, README documentation |
-| Lindsay Kislingbury | [lindsay-kislingbury](https://github.com/lindsay-kislingbury) | Hexadecimal literal implementation, Hexadecimal NFA diagram, Combined NFA integration, Test framework development |
-| Kaila Manaligod Manangan | [kailamanangan16](https://github.com/kailamanangan16) | Decimal literal code implementation, Decimal NFA diagram, Test case validation |
+| Roshan Karimi | [Roshaaw](https://github.com/Roshaaw) | Octal literal code implementation, Octal NFA diagram, Floating Point NFA diagram README documentation |
+| Lindsay Kislingbury | [lindsay-kislingbury](https://github.com/lindsay-kislingbury) | Hexadecimal literal implementation, Floating Point NFA diagram, Hexadecimal NFA diagram, Combined NFA integration, Test framework development |
+| Kaila Manaligod Manangan | [kailamanangan16](https://github.com/kailamanangan16) | Decimal literal code implementation, Decimal NFA diagram, Floating Point implementation Test case validation |
 
 > All group members collaborated via voice calls to design **each individual NFA** and the **combined NFA**. We worked together on transitions, testing, and JFLAP design. Each member implemented code for one specific number type, but the logic and NFA design were collaborative.
 
@@ -61,6 +61,7 @@ Each line should contain a test case followed by "accept" or "reject", such as:
 0xff accept
 0o777 accept
 01 reject
+1e100 accept
 ``` 
 
 - The empty string can be tested with just "accept" or "reject" on a line
@@ -81,7 +82,8 @@ The `nfa` folder contains visual representations of our automata designs:
 
 - **Decimal NFA**: State diagram showing the automaton that recognizes Python decimal literals
 - **Octal NFA**: State diagram showing the automaton that recognizes Python octal literals
-- **Hexadecimal NFA**: State diagram showing the automaton that recognizes Python hexadecimal literals
+- **Hexadecimal NFA**: State diagram showing the automaton that recognizes Python hexadecimal literals 
+- **Floating Point NFA**: State diagram showing the automaton that recognizes Python floating point literals
 - **Combined NFA**: The unified automaton that integrates all three NFAs to recognize any valid Python integer literal
 
 Each diagram is available in both JFLAP file format (`.jff`) for further exploration and as image files (`.jpg`) for quick reference. These diagrams were essential to our implementation process and directly correspond to the transition functions in our code.
