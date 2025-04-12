@@ -30,9 +30,6 @@ octdigit     ::= "0"..."7"
 hexdigit     ::= digit | "a"..."f" | "A"..."F"
 ``` 
 
-Our NFA implementation supports decimal integers (e.g., `123`, `0`, `1_000`), octal integers (e.g., `0o777`, `0O123`), hexadecimal integers (e.g., `0xff`, `0XAB`), and floating point literals (e.g., `3.14`, `1e100`, `3.14e-10`)  with proper handling of underscore separators according to the specification.   
-
-
 ## Floating-point literals
 
 According to the [Python documentation](https://docs.python.org/3/reference/lexical_analysis.html#numeric-literals), Floating-point literals are described by the following lexical definitions:
@@ -45,7 +42,8 @@ fraction      ::= "." digitpart
 exponent      ::= ("e" | "E") ["+" | "-"] digitpart
 ```
 
-Note that the integer and exponent parts are always interpreted using radix 10. For example, 077e010 is legal, and denotes the same number as 77e10. The allowed range of floating-point literals is implementation-dependent. As in integer literals, underscores are supported for digit grouping.
+Our NFA implementation supports decimal integers (e.g., `123`, `0`, `1_000`), octal integers (e.g., `0o777`, `0O123`), hexadecimal integers (e.g., `0xff`, `0XAB`), and floating point literals (e.g., `3.14`, `1e100`, `3.14e-10`)  with proper handling of underscore separators according to the specification.   
+
 
 
 ---
