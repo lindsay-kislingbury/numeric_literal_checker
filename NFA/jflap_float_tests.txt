@@ -19,6 +19,9 @@
 3.14_15_93 accept
 1_000.000_001 accept
 1_2_3.4_5_6e7_8_9 accept
+
+01234 reject
+0123_56 reject
 _1.2 reject
 1_.2 reject
 1._2 reject

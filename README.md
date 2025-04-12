@@ -39,8 +39,8 @@ Our NFA implementation supports decimal integers (e.g., `123`, `0`, `1_000`), oc
 
 | Name | GitHub | Tasks |
 |------|--------|-------|
-| Roshan Karimi | [Roshaaw](https://github.com/Roshaaw) | Octal literal code implementation, Octal NFA diagram, README documentation |
-| Lindsay Kislingbury | [lindsay-kislingbury](https://github.com/lindsay-kislingbury) | Hexadecimal literal implementation, Hexadecimal NFA diagram, Combined NFA integration, Test framework development |
+| Roshan Karimi | [Roshaaw](https://github.com/Roshaaw) | Octal literal code implementation, Octal NFA diagram, Float NFA diagram, README documentation |
+| Lindsay Kislingbury | [lindsay-kislingbury](https://github.com/lindsay-kislingbury) | Hexadecimal literal implementation, Hexadecimal NFA diagram, FLOAT NFA diagram, Combined NFA integration, Test framework development |
 | Kaila Manaligod Manangan | [kailamanangan16](https://github.com/kailamanangan16) | Decimal literal code implementation, Decimal NFA diagram, Test case validation |
 
 > All group members collaborated via voice calls to design **each individual NFA** and the **combined NFA**. We worked together on transitions, testing, and JFLAP design. Each member implemented code for one specific number type, but the logic and NFA design were collaborative.
