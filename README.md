@@ -54,7 +54,7 @@ Note that the integer and exponent parts are always interpreted using radix 10. 
 
 | Name | GitHub | Tasks |
 |------|--------|-------|
-| Roshan Karimi | [Roshaaw](https://github.com/Roshaaw) | Octal literal code implementation, Octal NFA diagram, Floating Point NFA diagram README documentation |
+| Roshan Karimi | [Roshaaw](https://github.com/Roshaaw) | Octal literal code implementation, Octal NFA diagram, Floating Point NFA diagram, README documentation |
 | Lindsay Kislingbury | [lindsay-kislingbury](https://github.com/lindsay-kislingbury) | Hexadecimal literal implementation, Floating Point NFA diagram, Hexadecimal NFA diagram, Combined NFA integration, Test framework development |
 | Kaila Manaligod Manangan | [kailamanangan16](https://github.com/kailamanangan16) | Decimal literal code implementation, Decimal NFA diagram, Floating Point implementation Test case validation |
 
